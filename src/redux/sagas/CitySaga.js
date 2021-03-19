@@ -4,6 +4,7 @@ import {call, put, takeLatest } from 'redux-saga/effects';
 
 function* FetchCity(action){
     const response = yield call(searchWeather,action.payload);
+    // console.log(response);
     if(response.data)
     {
         yield call( AsyncStore, JSON.stringify(response.data) );

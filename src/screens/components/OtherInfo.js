@@ -3,22 +3,24 @@ import { useSelector } from "react-redux";
 import { Text, View, StyleSheet} from 'react-native';
 import Wind from "../../helperFunctions/Wind";
 import WindDegree from "../../helperFunctions/WindDegree";
+import Pressure from "../../helperFunctions/Pressure";
+import Visibilty from "../../helperFunctions/Visibility";
 
 const OtherInfo = props => {
     const data = props.stateData;
-    console.log('data in OtherScreen: ', data);
+    // console.log('data in OtherScreen: ', data);
     const units = useSelector(state => state.CustomizeUnitsReducer);
     return(
         <View style={styles.OuterView}>
             <View style={styles.InnerView}>
-                {/* <Text style={styles.Text}>Wind: {Wind(data.wind.speed,units.windspeed) + " "}{WindDegree(data.wind.deg)}</Text> */}
+                <Text style={styles.Text}>Wind: {Wind(data.wind.speed,units.windspeed) + " "}{WindDegree(data.wind.deg)}</Text>
                 <Text style={styles.Text}>Humidity: {data.main.humidity}%</Text>
                 <Text style={styles.Text}>UV index: 7.8</Text>
             </View>
 
             <View style={styles.InnerView}>
-                <Text style={styles.Text}>Pressure: 3.4mph SW+</Text>
-                <Text style={styles.Text}>Visibility: 30%</Text>
+                <Text style={styles.Text}>Pressure: {Pressure(data.main.pressure,units.pressure)}</Text>
+                <Text style={styles.Text}>Visibility: {Visibilty(data.visibility,units.distance)}</Text>
                 <Text style={styles.Text}>Dew Point: 544</Text>
             </View>
         </View>

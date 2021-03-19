@@ -5,73 +5,44 @@ const CustomizeUnitsReducer = (state = initialState, action) => {
     {
         // Set Temperature Units
         case 'temperature':
-        if(action.payload === 0)
-        {
-            return({...state, temperature: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, temperature: 1});
-        }
+        // state = action.payload;
+        // console.log(state);      
+        return action.payload;
 
         // Set Wind Speed Units
         case 'windspeed':
-        if(action.payload === 0)
-        {
-            return({...state, windspeed: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, windspeed: 1});
-        }
-        else if(action.payload === 2)
-        {
-            return({...state, windspeed: 2});
-        }
+        // state = action.payload;
+        console.log(action.payload);      
+        return action.payload;
 
         // Set Pressure Units
         case 'pressure':
-        if(action.payload === 0)
-        {
-            return({...state, pressure: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, pressure: 1});
-        }
+        // state = action.payload;
+        // console.log(state);      
+        return action.payload;
 
         // Set Precipitation Units
         case 'precipitation':
-        if(action.payload === 0)
-        {
-            return({...state, precipitation: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, precipitation: 1});
-        }
+        // state = action.payload;
+        // console.log(state);      
+        return action.payload;
 
         // Set Distance Units
         case 'distance':
-        if(action.payload === 0)
-        {
-            return({...state, distance: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, distance: 1});
-        }
+        // state = action.payload;
+        // console.log(state);      
+        return action.payload;
 
         // Set Time Format Units
         case 'timeformat':
-        if(action.payload === 0)
-        {
-            return({...state, timeformat: 0});
-        }
-        else if(action.payload === 1)
-        {
-            return({...state, timeformat: 1});
-        }
+        // state = action.payload;
+        // console.log(state);      
+        return action.payload;
+
+        case 'setunits':
+        // console.log('setunits');
+        // initialState = action.payload;
+        return(action.payload);
 
         default:
         return state;

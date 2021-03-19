@@ -39,4 +39,11 @@ const CustomizeTime = (time) => {
         payload: time
     });
 }
-export default { CustomizeTemp, CustomizeWind, CustomizePressure, CustomizePrecipitation, CustomizeDistance, CustomizeTime };
+
+const CustomizeUnits = (units) => {
+    return({
+        type: 'CustomizeUnits',
+        payload: units
+    });
+}
+export default { CustomizeTemp, CustomizeWind, CustomizePressure, CustomizePrecipitation, CustomizeDistance, CustomizeTime, CustomizeUnits };
