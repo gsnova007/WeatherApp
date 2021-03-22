@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import WeatherDetail from "./components/WeatherDetail";
 import OtherInfo from "./components/OtherInfo";
 import HourlyTemperature from "./components/HourlyTemperature";
+import DailyTemp from "./components/DailyTemp";
 
 const Index = ({ navigation }) => {
 	const data = useSelector(state => state.CityReducer.CityDetail);
@@ -13,15 +14,16 @@ const Index = ({ navigation }) => {
 	return(
 		<View style={{flex:1, backgroundColor:'#fff'}}>
 			<HeaderIndex navigation={navigation} stateData = {data.data1}/>
-			<View style={styles.content}>
+			<ScrollView style={styles.content}>
 				<WeatherDetail stateData = {data.data1} />
-				<OtherInfo stateData = {data.data1} />
+				<OtherInfo stateData = {data} />
 				<HourlyTemperature data={data}/>
+				<DailyTemp data={data}/>
 				{/* <ScrollView>
 					<Text style={{fontSize:90}}>
 					</Text>
 				</ScrollView> */}
-			</View>
+			</ScrollView>
 		</View>
 	);
 }

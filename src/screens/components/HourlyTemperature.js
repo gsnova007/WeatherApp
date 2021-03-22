@@ -31,7 +31,7 @@ const HourlyTemperature = ({data}) => {
                 keyExtractor={key => key + Math.random() * 10000000}
                 renderItem={({item})=>{
                     return(
-                        <View style={{alignItems : 'center', marginHorizontal:2}}>
+                        <View style={{alignItems : 'center', marginHorizontal:1}}>
                             <Text style={styles.Time}>{TimeFormat(item.dt,units.timeformat)} </Text>
                             <Image source={{uri : `http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}} style={styles.icon}/>
                             <Text>{Temperature(item.temp,units.temperature)}</Text>

@@ -5,7 +5,7 @@ const TimeFormat = (val,tf) => {
         var date = new Date(val * 1000);
         var hours = date.getHours();
         var minute = date.getMinutes();
-        return(`${hours}:${minute}`);
+        return(`${hours}:00`);
     }
     if(tf === 1)
     {
@@ -14,7 +14,7 @@ const TimeFormat = (val,tf) => {
         var minute = date.getMinutes();
         var AmOrPm = hours >= 12 ? 'pm' : 'am';
         hours = (hours % 12) || 12;
-        return(`${hours}:${minute} ${AmOrPm}`);
+        return(`${hours} ${AmOrPm}`);
     }
 }
 

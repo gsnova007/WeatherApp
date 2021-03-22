@@ -36,7 +36,7 @@ const HeaderIndex = ({navigation, stateData}) => {
                 containerStyle={{
                     backgroundColor: '#ffffff',
                     justifyContent: 'space-around',
-                    height:120
+                    height:110
                 }}
             />
             <Modal visible={modal} style={styles.modal} animationType="fade">

@@ -17,7 +17,7 @@ const preLoad = ({navigation}) => {
                     await setUnitsFirstly();
                 }
                 dispatch({type: 'search_city', payload: StoreResponse.data1.name});
-                setTimeout(function(){ navigation.navigate('Home'); }, 10000);
+                setTimeout(function(){ navigation.navigate('Home'); }, 15000);
                 // console.log('preLoad if: ',StoreResponse.name);
             }
             else{
@@ -25,7 +25,7 @@ const preLoad = ({navigation}) => {
                 // const units = await getUnits();
                 // console.log(units);
                 dispatch({type: 'search_city', payload: 'London'});
-                setTimeout(function(){ navigation.navigate('Home'); }, 10000);
+                setTimeout(function(){ navigation.navigate('Home'); }, 15000);
                 // console.log('preLoad else: ');
             }
         }
