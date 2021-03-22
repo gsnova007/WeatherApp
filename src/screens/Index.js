@@ -9,14 +9,14 @@ import HourlyTemperature from "./components/HourlyTemperature";
 
 const Index = ({ navigation }) => {
 	const data = useSelector(state => state.CityReducer.CityDetail);
-	// console.log("data in IndexScreen: ",data);
+	// console.log("data in IndexScreen: ",data.data2);
 	return(
 		<View style={{flex:1, backgroundColor:'#fff'}}>
-			<HeaderIndex navigation={navigation}/>
+			<HeaderIndex navigation={navigation} stateData = {data.data1}/>
 			<View style={styles.content}>
-				<WeatherDetail stateData = {data} />
-				<OtherInfo stateData = {data} />
-				{/* <HourlyTemperature /> */}
+				<WeatherDetail stateData = {data.data1} />
+				<OtherInfo stateData = {data.data1} />
+				<HourlyTemperature data={data}/>
 				{/* <ScrollView>
 					<Text style={{fontSize:90}}>
 					</Text>

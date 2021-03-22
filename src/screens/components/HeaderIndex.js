@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import allActions from '../../redux/actions';
 
-const HeaderIndex = ({data, navigation}) => {
+const HeaderIndex = ({navigation, stateData}) => {
     const [modal, setModal] = useState(false);
-    const city = useSelector(state => state.CityReducer.CityDetail);
+    const city = stateData;
     const [text, setText] = useState('');
     const dispatch = useDispatch();
     return(

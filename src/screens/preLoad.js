@@ -8,15 +8,15 @@ const preLoad = ({navigation}) => {
     useEffect(() => {
         async function fetchData() {
             const StoreResponse = await getStore();
-            if(StoreResponse)
+            if(StoreResponse.data1)
             {
                 const units = await getUnits();
                 // console.log(units);
                 dispatch({type: 'CustomizeUnits', payload: units});
-                if(units.temperature){
+                if(!units.temperature){
                     await setUnitsFirstly();
                 }
-                dispatch({type: 'search_city', payload: StoreResponse.name});
+                dispatch({type: 'search_city', payload: StoreResponse.data1.name});
                 setTimeout(function(){ navigation.navigate('Home'); }, 10000);
                 // console.log('preLoad if: ',StoreResponse.name);
             }
@@ -25,7 +25,7 @@ const preLoad = ({navigation}) => {
                 // const units = await getUnits();
                 // console.log(units);
                 dispatch({type: 'search_city', payload: 'London'});
-                setTimeout(function(){ navigation.navigate('Home'); }, 5000);
+                setTimeout(function(){ navigation.navigate('Home'); }, 10000);
                 // console.log('preLoad else: ');
             }
         }

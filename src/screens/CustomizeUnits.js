@@ -6,7 +6,7 @@ import { ButtonGroup } from 'react-native-elements';
 const Index = ({ navigation }) => {
 	const dispatch = useDispatch();
 	const units = useSelector(state => state.CustomizeUnitsReducer);
-	console.log(units);
+	// console.log(units);
 	return(
 		<View style={{flex: 1,backgroundColor:'#fff',paddingTop:15}}>
 			<View style={styles.innerView}>

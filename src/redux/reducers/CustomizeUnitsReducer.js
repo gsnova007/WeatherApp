@@ -1,4 +1,4 @@
-const initialState = { temperature: 0, windspeed: 0, pressure: 0, precipitation: 0, distance: 0, timeformat: 0 };
+var initialState = { temperature: 0, windspeed: 0, pressure: 0, precipitation: 0, distance: 0, timeformat: 0 };
 
 const CustomizeUnitsReducer = (state = initialState, action) => {
     switch(action.type)
@@ -12,7 +12,7 @@ const CustomizeUnitsReducer = (state = initialState, action) => {
         // Set Wind Speed Units
         case 'windspeed':
         // state = action.payload;
-        console.log(action.payload);      
+        // console.log(action.payload);      
         return action.payload;
 
         // Set Pressure Units
@@ -40,11 +40,12 @@ const CustomizeUnitsReducer = (state = initialState, action) => {
         return action.payload;
 
         case 'setunits':
-        // console.log('setunits');
+        // console.log(action.payload);
         // initialState = action.payload;
         return(action.payload);
 
         default:
+        // console.log('default');
         return state;
     }
 }
