@@ -35,7 +35,7 @@ const DailyTemp = ({data}) => {
                     const str = date.toString();
                     // console.log(date);
                     return(
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{alert(item.dt)}}>
                             <View style={styles.ContentView}>
                                 <Text>{str.slice(0,15)}</Text>
                                 <View style={{flexDirection:'row',alignItems:'center'}}>
