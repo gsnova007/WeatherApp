@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import { useSelector } from 'react-redux';
 import { View, Text, FlatList, StyleSheet, Image } from "react-native";
 import Temperature from "../../helperFunctions/Temperature";
@@ -15,7 +15,7 @@ const WeatherDetail = props => {
                     return(
                         <View style={styles.view2}>
                             <View style={styles.view3}>
-                                <Image source={{uri : `http://openweathermap.org/img/wn/${item.icon}@2x.png`}} style={styles.icon}/>
+                                <Image source={{uri : `https://openweathermap.org/img/wn/${item.icon}@2x.png`}} style={styles.icon}/>
                                 <Text style={styles.text}>{item.main}</Text>
                             </View>
                             <Text style={styles.text2}>{item.description}</Text>

@@ -33,7 +33,7 @@ const HourlyTemperature = ({data}) => {
                     return(
                         <View style={{alignItems : 'center', marginHorizontal:1}}>
                             <Text style={styles.Time}>{TimeFormat(item.dt,units.timeformat)} </Text>
-                            <Image source={{uri : `http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}} style={styles.icon}/>
+                            <Image source={{uri : `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}} style={styles.icon}/>
                             <Text>{Temperature(item.temp,units.temperature)}</Text>
                         </View>
                     );

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, Text, View, Button, StyleSheet, TextInput } from "react-native";
-import { Header, SearchBar, Icon } from 'react-native-elements';
-import { useDispatch, useSelector } from "react-redux";
-
+import React, { useState } from 'react';
+import { Modal, View, StyleSheet, TextInput } from "react-native";
+import { Header, Icon } from 'react-native-elements';
+import { useDispatch } from "react-redux";
 import allActions from '../../redux/actions';
 
 const HeaderIndex = ({navigation, stateData}) => {

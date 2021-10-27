@@ -1,38 +1,45 @@
-import React,{ useEffect } from 'react';
-import {View, Image } from 'react-native';
+import React from 'react';
+import {View, Image, Text } from 'react-native';
 import { getStore, setUnitsFirstly, getUnits } from "../AsyncStorage";
 import { useDispatch } from "react-redux";
 
+const appicon = require('../../assets/appicon_round.png');
+
 const preLoad = ({navigation}) => {
     const dispatch = useDispatch();
-    useEffect(() => {
-        async function fetchData() {
+    navigation.addListener('focus', async () => {
             const StoreResponse = await getStore();
-            if(StoreResponse.data1)
+            if(StoreResponse !== null)
             {
+                dispatch({type: 'search_city', payload: StoreResponse.data1.name});
                 const units = await getUnits();
-                // console.log(units);
-                dispatch({type: 'CustomizeUnits', payload: units});
-                if(!units.temperature){
+                // console.log(StoreResponse);
+                if(units === null){
                     await setUnitsFirstly();
                 }
-                dispatch({type: 'search_city', payload: StoreResponse.data1.name});
-                setTimeout(function(){ navigation.navigate('Home'); }, 15000);
+                else{
+                    dispatch({type: 'CustomizeUnits', payload: units});
+                }
+                setTimeout(function(){ navigation.reset({index:0,routes:[{name:'Home'}]}) }, 5000);
                 // console.log('preLoad if: ',StoreResponse.name);
             }
             else{
+                dispatch({type: 'search_city', payload: 'London'});
                 await setUnitsFirstly();
                 // const units = await getUnits();
                 // console.log(units);
-                dispatch({type: 'search_city', payload: 'London'});
-                setTimeout(function(){ navigation.navigate('Home'); }, 15000);
+                setTimeout(function(){ navigation.reset({index:0,routes:[{name:'Home'}]}) }, 5000);
                 // console.log('preLoad else: ');
             }
         }
-    fetchData();
-},[]);
-
-    return null;
+    );
+    return(
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Image source={appicon} style={{height:100, width:100}}/>
+            <Text style={{fontSize:17,fontWeight:'bold'}}>Weather App</Text>
+            <Text style={{fontSize:12}}>Fetching Data...</Text>
+        </View>
+    );
 }
 
 export default preLoad;

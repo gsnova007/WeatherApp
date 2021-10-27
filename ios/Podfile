@@ -8,6 +8,11 @@ target 'WeatherApp' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
+
+  pod 'react-native-pager-view', :path => '../node_modules/react-native-pager-view'
+
+
   target 'WeatherAppTests' do
     inherit! :complete
     # Pods for testing

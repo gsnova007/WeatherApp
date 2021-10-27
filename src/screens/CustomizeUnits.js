@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
+const appicon = require('../../assets/appicon_round.png');
 
 const Index = ({ navigation }) => {
 	const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.temperature}
 					buttons={[`\xB0C`, `\xB0F`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
 			</View>
 
@@ -27,6 +30,8 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.windspeed}
 					buttons={[`m/s`, `km/h`, `mph`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
 			</View>
 
@@ -38,6 +43,8 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.pressure}
 					buttons={[`hPa`, `inHg`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
 			</View>
 
@@ -49,6 +56,8 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.precipitation}
 					buttons={[`mm`, `in`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
 			</View>
 
@@ -60,6 +69,8 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.distance}
 					buttons={[`km`, `mi`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
 			</View>
 
@@ -71,7 +82,13 @@ const Index = ({ navigation }) => {
 					selectedIndex={units.timeformat}
 					buttons={[`24-hour`, `12-hour`]}
 					containerStyle={{height: 25,width:150}}
+					selectedButtonStyle={{backgroundColor:'#e96e50'}}
+					buttonStyle={{backgroundColor:'#efefef'}}
 				/>
+			</View>
+			<View style={{flex:1,justifyContent:'flex-end',paddingBottom:20}}>
+				<Image source={appicon} style={{height:50, width:50, alignSelf:'center'}}/>
+				<Text style={{alignSelf:'center',marginTop:5}}>WeatherApp deveploed by Gaurav Bhatnagar</Text>
 			</View>
 		</View>
 	);
